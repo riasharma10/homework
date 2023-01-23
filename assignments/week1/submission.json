@@ -1,11 +1,6 @@
 {
     "assignment_name": "Assignment 1",
-    "contributors": [
-        {
-            "name": "Ria Sharma",
-            "pennkey": "rias"
-        }
-    ],
+    "contributors": [{"name": "Ria Sharma", "pennkey": "rias"}],
     "sources": [
         "https://www.cs.toronto.edu/~frossard/post/linear_regression/",
         "Lots of numpy documentation"

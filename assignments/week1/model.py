@@ -3,15 +3,15 @@ import numpy as np
 
 class LinearRegression:
     """
-        A linear regression model.
+    A linear regression model.
     """
 
     w: np.ndarray
     b: float
 
     def __init__(self):
-        self.w : np.ndarray = None
-        self.b : float = None
+        self.w: np.ndarray = None
+        self.b: float = None
 
     def fit(self, X: np.ndarray, y: np.ndarray) -> None:
         """
@@ -36,7 +36,6 @@ class LinearRegression:
         self.w = self.w[1:]
 
         return self
-        
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -49,21 +48,21 @@ class LinearRegression:
             np.ndarray: The predicted output.
 
         """
-        if (X.shape[1] != self.w.shape[0]):
+        if X.shape[1] != self.w.shape[0]:
             X = np.column_stack((np.ones(len(X)), X))
 
         y_pred = np.dot(X, self.w) + self.b
         return y_pred
 
+
 class GradientDescentLinearRegression(LinearRegression):
     """
     A linear regression model that uses gradient descent to fit the model.
     """
+
     def __init__(self):
         self.w = None
         self.b = None
-
-
 
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.01, epochs: int = 1000
@@ -79,7 +78,7 @@ class GradientDescentLinearRegression(LinearRegression):
 
         """
 
-         # add a column of 1s to X for bias
+        # add a column of 1s to X for bias
         X = np.column_stack((np.ones(len(X)), X))
 
         # initialize coefficients and intercept
@@ -95,7 +94,6 @@ class GradientDescentLinearRegression(LinearRegression):
             self.w += lr * np.dot(X.transpose(), errors) / len(X)
             self.b += lr * errors.sum() / len(X)
         print("ended for loop")
-        
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -108,11 +106,11 @@ class GradientDescentLinearRegression(LinearRegression):
             np.ndarray: The predicted output.
 
         """
-       # X = np.column_stack((np.ones(len(X)), X))
+        # X = np.column_stack((np.ones(len(X)), X))
 
         # make predictions
-        
-        if (X.shape[1] != self.w.shape[0]):
+
+        if X.shape[1] != self.w.shape[0]:
             print("X shape is", X.shape)
             print("w shape is", self.w.shape)
             X = np.column_stack((np.ones(len(X)), X))
