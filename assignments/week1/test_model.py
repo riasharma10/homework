@@ -88,9 +88,11 @@ def test_epochs_improve_fit():
     lr = GradientDescentLinearRegression()
     lr.fit(X, y, epochs=10)
     mse1 = mse(y, lr.predict(X))
+    print("MSE1", mse1)
 
     lr = GradientDescentLinearRegression()
     lr.fit(X, y, epochs=1000)
     mse2 = mse(y, lr.predict(X))
+    print("MSE2", mse2)
 
     assert mse1 > mse2, "MSE should improve with more epochs."
