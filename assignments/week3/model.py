@@ -6,6 +6,7 @@ class MLP(torch.nn.Module):
     """
     Class that defines the MLP for the MNIST dataset.
     """
+
     def __init__(
         self,
         input_size: int,
