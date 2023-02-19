@@ -2,11 +2,11 @@
     "assignment_name": "RegOpt",
     "contributors": [
         {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
+            "name": "Ria Sharma",
+            "pennkey": "rias"
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "https://nlp.seas.harvard.edu/2018/04/03/attention.html#optimizer"
     ]
 }
