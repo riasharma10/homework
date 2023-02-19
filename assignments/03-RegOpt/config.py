@@ -2,12 +2,12 @@ from typing import Callable
 import torch
 import torch.optim
 import torch.nn as nn
-from torchvision.transforms import Compose, Normalize, ToTensor
+from torchvision.transforms import Compose, ToTensor
 
 
 class CONFIG:
     batch_size = 64
-    num_epochs = 15
+    num_epochs = 7
     initial_learning_rate = 0.005
     initial_weight_decay = 0.001
 
