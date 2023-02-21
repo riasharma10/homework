@@ -2,12 +2,18 @@ from typing import Callable
 import torch
 import torch.optim
 import torch.nn as nn
-from torchvision.transforms import Compose, ToTensor
+from torchvision.transforms import (
+    Compose,
+    ToTensor,
+    # RandomRotation,
+    # RandomHorizontalFlip,
+    # RandomVerticalFlip,
+)
 
 
 class CONFIG:
     batch_size = 64
-    num_epochs = 11
+    num_epochs = 10
     initial_learning_rate = 0.005
     initial_weight_decay = 0.001
 
@@ -26,7 +32,6 @@ class CONFIG:
 
     transforms = Compose(
         [
-            # Normalize((0.1307,), (0.3081,)),
             ToTensor(),
         ]
     )
