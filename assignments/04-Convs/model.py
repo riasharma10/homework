@@ -4,17 +4,12 @@ import torch.nn as nn
 
 class Model(torch.nn.Module):
     """
-    Creates new CNN fro CIFAR10.
+    Creates new CNN for CIFAR10 input.
     """
 
     def __init__(self, num_channels: int, num_classes: int) -> None:
         """
         Initialize the model.
-        Arguments:
-            num_channels: The number of channels in the input images.
-            num_classes: The number of classes in the dataset.
-        Returns:
-            None
         """
         super(Model, self).__init__()
 
@@ -37,11 +32,7 @@ class Model(torch.nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
-        Forward pass of the network.
-        Arguments:
-            x: The input data.
-        Returns:
-            The output of the network.
+        Forward pass
         """
         x = self.relu1(self.norm1(self.conv1(x)))
         x = self.pool1(self.relu2(self.norm2(self.conv2(x))))
