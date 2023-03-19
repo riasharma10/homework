@@ -2,28 +2,20 @@ from typing import Callable
 import torch
 import torch.optim
 import torch.nn as nn
-from torchvision.transforms import (
-    Compose,
-    ToTensor,
-    RandomCrop,
-    RandomHorizontalFlip,
-    Normalize,
-)
+from torchvision.transforms import Compose, ToTensor, RandomHorizontalFlip
 
 
 class CONFIG:
-    batch_size = 8
-    num_epochs = 8
+    batch_size = 32
+    num_epochs = 3
 
     optimizer_factory: Callable[
         [nn.Module], torch.optim.Optimizer
-    ] = lambda model: torch.optim.Adam(model.parameters(), lr=1e-3)
+    ] = lambda model: torch.optim.AdamW(model.parameters(), lr=1e-3)
 
     transforms = Compose(
         [
-            RandomCrop(32, padding=4),
             RandomHorizontalFlip(),
             ToTensor(),
-            Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
         ]
     )
